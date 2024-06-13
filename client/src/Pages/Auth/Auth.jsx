@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./Auth.css";
 import icon from "../../assets/icon.png";
@@ -96,15 +96,15 @@ const Auth = () => {
               <h4>Password</h4>
               <button
                 type="button"
-                style={{ color: "#007ac6", fontSize: "13px", marginLeft: "30%", backgroundColor: "transparent", border: "none" }}
+                style={{ color: "#007ac6", fontSize: "13px", marginLeft: "30%", backgroundColor: "transparent", border: "none",marginLeft:"%" }}
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
               {!isSignup && (
-                <p style={{ color: "#007ac6", fontSize: "13px" }}>
-                  forgot password?
-                </p>
+                <Link to="/forgotpassword" style={{ color: "#007ac6", fontSize: "13px", textDecoration: "none", marginTop:"2.5%" }}>
+                  Forgot password?
+                </Link>
               )}
             </div>
             <input

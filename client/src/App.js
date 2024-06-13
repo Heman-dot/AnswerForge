@@ -6,6 +6,9 @@ import Navbar from "./components/Navbar/Navbar";
 import AllRoutes from "./AllRoutes";
 import { fetchAllQuestions } from "./actions/question";
 import { fetchAllUsers } from "./actions/users";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer /> {/* Add ToastContainer here */}
       <Router>
         <Navbar handleSlideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
