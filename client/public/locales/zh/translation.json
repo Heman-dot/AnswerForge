@@ -1,0 +1,201 @@
+{
+  "DisplayName": "显示名称",
+  "PhoneNumber": "电话号码",
+  "Email": "电子邮件",
+  "Password": "密码",
+  "PleaseFillOutAllFields": "请填写所有字段",
+  "AuthenticationFailed": "认证失败。请再试一次。",
+  "Processing": "处理中...",
+  "SignUp": "注册",
+  "Login": "登录",
+  "Hide": "隐藏",
+  "Show": "显示",
+  "ForgotPassword": "忘记密码？",
+  "AlreadyHaveAccount": "已经有帐户？",
+  "DontHaveAccount": "没有帐户？",
+  "about": "关于",
+  "products": "产品",
+  "forTeams": "团队",
+  "searchPlaceholder": "搜索...",
+  "login": "登录",
+  "logout": "登出",
+  "topQuestions": "热门问题",
+  "allQuestions": "所有问题",
+  "askQuestion": "提出问题",
+  "loginAlert": "登录或注册以提问",
+  "loading": "加载中...",
+  "questionsCount": "个问题",
+  "votes": "票",
+  "answers": "答案",
+  "asked": "提问于",
+  "home": "首页",
+  "public": "公共",
+  "questions": "问题",
+  "tags": "标签",
+  "users": "用户",
+  "overflow_blog": "Overflow 博客",
+  "podcast_title": "观察性对软件未来（及您的 DevOps 职业）至关重要",
+  "meta_title": "Meta 精选",
+  "review_queue": "审阅队列工作流程 - 最终版本...",
+  "valued_associates": "欢迎尊贵的伙伴：#958 - V2Blast #959 - SpencerG",
+  "outdated_answers": "过时的答案：接受的答案现在在 Stack Overflow 上不再固定",
+  "hot_meta_posts": "热门 Meta 帖子",
+  "spam_flag_declined": "为什么这个垃圾信息标记被拒绝，而问题却被标记为垃圾？",
+  "best_course_of_action": "当用户有足够的声誉时，最佳操作是什么...",
+  "how_to_ask_help": "如何询问帮助页面的链接是否是一个有用的评论？",
+  "watchedTags": "已关注标签",
+  "askaQuestion": {
+    "pageTitle": "提问",
+    "title": {
+      "label": "标题",
+      "placeholder": "例如：是否有R函数可以找到向量中元素的索引？"
+    },
+    "body": {
+      "label": "内容",
+      "placeholder": "包括所有答案者需要的信息"
+    },
+    "tags": {
+      "label": "标签",
+      "placeholder": "例如：(xml typescript wordpress)"
+    },
+    "submitButton": "查看您的问题",
+    "alerts": {
+      "emptyFields": "请填写所有字段",
+      "loginRequired": "请登录以提问"
+    }
+  },
+  "aboutAuth": {
+    "title": "加入 Stack Overflow 社区",
+    "askQuestion": "解决问题 — 提问",
+    "unlockPrivileges": "解锁新的权限，比如投票和评论",
+    "saveFavorites": "保存你喜欢的标签、筛选器和工作",
+    "earnReputation": "获得声誉和徽章",
+    "collaborate": "与私人团队合作并分享知识",
+    "teamsOffer": "为多达 50 名用户免费提供 Stack Overflow for Teams。"
+  },
+  "forgotPassword": {
+    "title": "忘记密码",
+    "email": "电子邮件",
+    "submit": "提交",
+    "login": "登录",
+    "codeSent": "代码已发送到邮箱",
+    "userNotFound": "用户未找到！ 请注册",
+    "somethingWentWrong": "出了些问题",
+    "enterCode": "输入代码",
+    "enterCodeMessage": "输入发送到您邮箱的6位代码。",
+    "invalidCode": "无效代码"
+  },
+  "resetPassword": {
+    "email": "电子邮件",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "submit": "提交",
+    "passwordMismatch": "密码不匹配",
+    "passwordTooShort": "密码必须至少有6个字符",
+    "passwordChangeSuccess": "密码修改成功",
+    "somethingWentWrong": "出了些问题"
+  },
+  "displayAnswer": {
+    "share": "分享",
+    "delete": "删除",
+    "answered": "回答"
+  },
+  "questionsDetails": {
+    "loading": "加载中...",
+    "share": "分享",
+    "delete": "删除",
+    "asked": "提问",
+    "yourAnswer": "你的答案",
+    "postYourAnswer": "发布你的答案",
+    "browseOther": "浏览其他标记的问题",
+    "or": "或",
+    "askYourQuestion": "提出你自己的问题。",
+    "answers": "答案"
+  },
+  "tagss": {
+    "title": "标签",
+    "description1": "标签是一个关键字或标签，用于将您的问题与其他类似问题进行分类。",
+    "description2": "使用正确的标签可以让其他人更容易找到并回答您的问题。"
+  },
+  "alltags": {
+    "javascript": {
+      "title": "JavaScript",
+      "desc": "一种高级解释性编程语言"
+    },
+    "python": {
+      "title": "Python",
+      "desc": "一种广泛使用的高级编程语言"
+    },
+    "c#": {
+      "title": "C#",
+      "desc": "一种通用的多范式编程语言"
+    },
+    "java": {
+      "title": "Java",
+      "desc": "一种基于类的面向对象编程语言"
+    },
+    "php": {
+      "title": "PHP",
+      "desc": "为网页开发设计的服务器端脚本语言"
+    },
+    "html": {
+      "title": "HTML",
+      "desc": "用于创建网页的标准标记语言"
+    },
+    "android": {
+      "title": "Android",
+      "desc": "基于Linux内核的移动操作系统"
+    },
+    "css": {
+      "title": "CSS",
+      "desc": "用于描述HTML文档的呈现方式的样式表语言"
+    },
+    "Reactjs": {
+      "title": "ReactJS",
+      "desc": "用于构建用户界面的JavaScript库"
+    },
+    "node.js": {
+      "title": "Node.js",
+      "desc": "一个开源的跨平台JavaScript运行时环境"
+    }
+  },
+  "userss": {
+    "title": "用户"
+  },
+  "profile": {
+    "joined": "加入",
+    "editProfile": "编辑个人资料",
+    "tagsWatched": "关注的标签",
+    "noTagsWatched": "0 个关注的标签",
+    "about": "关于",
+    "noBioFound": "未找到个人简介"
+  },
+  "editProfile": {
+    "editYourProfile": "编辑您的个人资料",
+    "publicInformation": "公共信息",
+    "displayName": "显示名称",
+    "aboutMe": "关于我",
+    "watchedTags": "关注的标签",
+    "addTagsInstructions": "添加用空格分隔的标签",
+    "updateTagsField": "更新标签字段",
+    "saveProfile": "保存个人资料",
+    "cancel": "取消"
+  },
+  "languages": {
+    "english": "英语",
+    "spanish": "西班牙语",
+    "french": "法语",
+    "hindi": "印地语",
+    "portuguese": "葡萄牙语",
+    "chinese": "中文"
+  },
+  "languageSwitcher": {
+    "enterEmail": "请输入您的电子邮件地址：",
+    "enterPhoneNumber": "请输入您的电话号码：",
+    "otpSentTo": "已向 {contact} 发送了 OTP。",
+    "verifyOTP": "验证 OTP",
+    "failedToSendOTP": "发送 OTP 失败，请稍后再试。",
+    "invalidOTP": "无效的 OTP，请重试。"
+  }
+
+}

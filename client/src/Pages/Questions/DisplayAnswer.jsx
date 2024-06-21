@@ -2,11 +2,13 @@ import React from "react";
 import moment from "moment";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from 'react-i18next';
 
 import Avatar from "../../components/Avatar/Avatar";
 import { deleteAnswer } from "../../actions/question";
 
 const DisplayAnswer = ({ question, handleShare }) => {
+  const { t } = useTranslation();
   const User = useSelector((state) => state.currentUserReducer);
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -21,19 +23,19 @@ const DisplayAnswer = ({ question, handleShare }) => {
           <div className="question-actions-user">
             <div>
               <button type="button" onClick={handleShare}>
-                Share
+                {t('displayAnswer.share')}
               </button>
               {User?.result?._id === ans?.userId && (
                 <button
                   type="button"
                   onClick={() => handleDelete(ans._id, question.noOfAnswers)}
                 >
-                  Delete
+                  {t('displayAnswer.delete')}
                 </button>
               )}
             </div>
             <div>
-              <p>answered {moment(ans.answeredOn).fromNow()}</p>
+              <p>{t('displayAnswer.answered')} {moment(ans.answeredOn).fromNow()}</p>
               <Link
                 to={`/Users/${ans.userId}`}
                 className="user-link"

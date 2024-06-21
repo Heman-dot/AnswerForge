@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import copy from "copy-to-clipboard";
+import { useTranslation } from 'react-i18next';
 
 import upvote from "../../assets/sort-up.svg";
 import downvote from "../../assets/sort-down.svg";
@@ -16,6 +17,7 @@ import {
 } from "../../actions/question";
 
 const QuestionsDetails = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const questionsList = useSelector((state) => state.questionsReducer);
 
@@ -29,11 +31,11 @@ const QuestionsDetails = () => {
   const handlePostAns = (e, answerLength) => {
     e.preventDefault();
     if (User === null) {
-      alert("Login or Signup to answer a question");
+      alert(t('questionsDetails.loginSignup'));
       Navigate("/Auth");
     } else {
       if (Answer === "") {
-        alert("Enter an answer before submitting");
+        alert(t('questionsDetails.enterAnswer'));
       } else {
         dispatch(
           postAnswer({
@@ -50,7 +52,7 @@ const QuestionsDetails = () => {
 
   const handleShare = () => {
     copy(url + location.pathname);
-    alert("Copied url : " + url + location.pathname);
+    alert(t('questionsDetails.copiedUrl') + url + location.pathname);
   };
 
   const handleDelete = () => {
@@ -59,7 +61,7 @@ const QuestionsDetails = () => {
 
   const handleUpVote = () => {
     if (User === null) {
-      alert("Login or Signup to up vote a question");
+      alert(t('questionsDetails.loginSignup'));
       Navigate("/Auth");
     } else {
       dispatch(voteQuestion(id, "upVote"));
@@ -68,7 +70,7 @@ const QuestionsDetails = () => {
 
   const handleDownVote = () => {
     if (User === null) {
-      alert("Login or Signup to down vote a question");
+      alert(t('questionsDetails.loginSignup'));
       Navigate("/Auth");
     } else {
       dispatch(voteQuestion(id, "downVote"));
@@ -78,7 +80,7 @@ const QuestionsDetails = () => {
   return (
     <div className="question-details-page">
       {questionsList.data === null ? (
-        <h1>Loading...</h1>
+        <h1>{t('questionsDetails.loading')}</h1>
       ) : (
         <>
           {questionsList.data
@@ -115,16 +117,16 @@ const QuestionsDetails = () => {
                       <div className="question-actions-user">
                         <div>
                           <button type="button" onClick={handleShare}>
-                            Share
+                            {t('questionsDetails.share')}
                           </button>
                           {User?.result?._id === question?.userId && (
                             <button type="button" onClick={handleDelete}>
-                              Delete
+                              {t('questionsDetails.delete')}
                             </button>
                           )}
                         </div>
                         <div>
-                          <p>asked {moment(question.askedOn).fromNow()}</p>
+                          <p>{t('questionsDetails.asked')} {moment(question.askedOn).fromNow()}</p>
                           <Link
                             to={`/Users/${question.userId}`}
                             className="user-link"
@@ -147,7 +149,7 @@ const QuestionsDetails = () => {
                 </section>
                 {question.noOfAnswers !== 0 && (
                   <section>
-                    <h3>{question.noOfAnswers} Answers</h3>
+                    <h3>{question.noOfAnswers} {t('questionsDetails.answers')}</h3>
                     <DisplayAnswer
                       key={question._id}
                       question={question}
@@ -156,7 +158,7 @@ const QuestionsDetails = () => {
                   </section>
                 )}
                 <section className="post-ans-container">
-                  <h3>Your Answer</h3>
+                  <h3>{t('questionsDetails.yourAnswer')}</h3>
                   <form
                     onSubmit={(e) => {
                       handlePostAns(e, question.answer.length);
@@ -174,24 +176,24 @@ const QuestionsDetails = () => {
                     <input
                       type="submit"
                       className="post-ans-btn"
-                      value="Post Your Answer"
+                      value={t('questionsDetails.postYourAnswer')}
                     />
                   </form>
                   <p>
-                    Browse other Question tagged
+                    {t('questionsDetails.browseOther')}
                     {question.questionTags.map((tag) => (
                       <Link to="/Tags" key={tag} className="ans-tags">
                         {" "}
                         {tag}{" "}
                       </Link>
                     ))}{" "}
-                    or
+                    {t('questionsDetails.or')}
                     <Link
                       to="/AskQuestion"
                       style={{ textDecoration: "none", color: "#009dff" }}
                     >
                       {" "}
-                      ask your own question.
+                      {t('questionsDetails.askYourQuestion')}
                     </Link>
                   </p>
                 </section>

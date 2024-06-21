@@ -1,19 +1,21 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import "./HomeMainbar.css";
 import QuestionList from "./QuestionList";
 
 const HomeMainbar = () => {
+  const { t } = useTranslation(); 
   const location = useLocation();
-  const user = 1;
+  const user = 1; 
   const navigate = useNavigate();
 
   const questionsList = useSelector((state) => state.questionsReducer);
 
   const checkAuth = () => {
     if (user === null) {
-      alert("login or signup to ask a question");
+      alert(t("loginAlert"));
       navigate("/Auth");
     } else {
       navigate("/AskQuestion");
@@ -24,20 +26,22 @@ const HomeMainbar = () => {
     <div className="main-bar">
       <div className="main-bar-header">
         {location.pathname === "/" ? (
-          <h1>Top Questions</h1>
+          <h1>{t("topQuestions")}</h1>
         ) : (
-          <h1>All Questions</h1>
+          <h1>{t("allQuestions")}</h1>
         )}
         <button onClick={checkAuth} className="ask-btn">
-          Ask Question
+          {t("askQuestion")} {}
         </button>
       </div>
       <div>
         {questionsList.data === null ? (
-          <h1>Loading...</h1>
+          <h1>{t("loading")}</h1> 
         ) : (
           <>
-            <p>{questionsList.data.length} questions</p>
+            <p>
+              {questionsList.data.length} {t("questionsCount")} {}
+            </p>
             <QuestionList questionsList={questionsList.data} />
           </>
         )}

@@ -1,0 +1,203 @@
+{
+  "DisplayName": "Display Name",
+  "PhoneNumber": "Phone Number",
+  "Email": "Email",
+  "Password": "Password",
+  "PleaseFillOutAllFields": "Please fill out all fields",
+  "AuthenticationFailed": "Authentication failed. Please try again.",
+  "Processing": "Processing...",
+  "SignUp": "Sign up",
+  "Login": "Log in",
+  "Hide": "Hide",
+  "Show": "Show",
+  "ForgotPassword": "Forgot password?",
+  "AlreadyHaveAccount": "Already have an account?",
+  "DontHaveAccount": "Don't have an account?",
+    "about": "About",
+    "products": "Products",
+    "forTeams": "For Teams",
+    "searchPlaceholder": "Search...",
+    "login": "Log in",
+    "logout": "Log out",
+    "topQuestions": "Top Questions",
+  "allQuestions": "All Questions",
+  "askQuestion": "Ask Question",
+  "loginAlert": "Login or signup to ask a question",
+  "loading": "Loading...",
+  "questionsCount": "questions",
+  "votes": "votes",
+  "answers": "answers",
+  "asked": "asked",
+  "home": "Home",
+  "public": "Public",
+  "questions": "Questions",
+  "tags": "Tags",
+  "users": "Users",
+  "overflow_blog": "The Overflow Blog",
+  "podcast_title": "Observability is key to the future of software (and your DevOps career)",
+  "meta_title": "Featured on Meta",
+  "review_queue": "Review queue workflows - Final release...",
+  "valued_associates": "Please welcome Valued Associates: #958 - V2Blast #959 - SpencerG",
+  "outdated_answers": "Outdated Answers: accepted answer is now unpinned on Stack Overflow",
+  "hot_meta_posts": "Hot Meta Posts",
+  "spam_flag_declined": "Why was this spam flag declined, yet the question marked as spam?",
+  "best_course_of_action": "What is the best course of action when a user has high enough rep to...",
+  "how_to_ask_help": "Is a link to the \"How to ask\" help page a useful comment?",
+  "watchedTags": "Watched tags",
+  "askaQuestion": {
+    "pageTitle": "Ask a public Question",
+    "title": {
+      "label": "Title",
+      "placeholder": "e.g. Is there an R function for finding the index of an element in a vector?"
+    },
+    "body": {
+      "label": "Body",
+      "placeholder": "Include all the information someone would need to answer your question"
+    },
+    "tags": {
+      "label": "Tags",
+      "placeholder": "e.g. (xml typescript wordpress)"
+    },
+    "submitButton": "Review your question",
+    "alerts": {
+      "emptyFields": "Please enter all the fields",
+      "loginRequired": "Login to ask question"
+    }
+  },
+  "aboutAuth": {
+    "title": "Join the Stack Overflow community",
+    "askQuestion": "Get unstuck — ask a question",
+    "unlockPrivileges": "Unlock new privileges like voting and commenting",
+    "saveFavorites": "Save your favorite tags, filters, and jobs",
+    "earnReputation": "Earn reputation and badges",
+    "collaborate": "Collaborate and share knowledge with a private group for",
+    "teamsOffer": "Get Stack Overflow for Teams free for up to 50 users."
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "email": "Email",
+    "submit": "Submit",
+    "login": "Login",
+    "codeSent": "Code sent to the email",
+    "userNotFound": "User not found! Please sign up",
+    "somethingWentWrong": "Something went wrong",
+    "enterCode": "Enter Code",
+    "enterCodeMessage": "Enter the 6-digit code sent to your Email.",
+    "invalidCode": "Invalid Code"
+  },
+  "resetPassword": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Submit",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "passwordChangeSuccess": "Password changed successfully",
+    "somethingWentWrong": "Something went wrong"
+  },
+  "displayAnswer": {
+    "share": "Share",
+    "delete": "Delete",
+    "answered": "answered"
+  },
+  "questionsDetails": {
+    "loading": "Loading...",
+    "share": "Share",
+    "delete": "Delete",
+    "asked": "asked",
+    "yourAnswer": "Your Answer",
+    "postYourAnswer": "Post Your Answer",
+    "browseOther": "Browse other Questions tagged",
+    "or": "or",
+    "askYourQuestion": "ask your own question.",
+    "answers": "Answers"
+  },
+  "tagss": {
+    "title": "Tags",
+    "description1": "A tag is a keyword or label that categorizes your question with other, similar questions.",
+    "description2": "Using the right tags makes it easier for others to find and answer your question."
+  },
+  "alltags": {
+    "javascript": {
+      "title": "JavaScript",
+      "desc": "A high-level, interpreted programming language"
+    },
+    "python": {
+      "title": "Python",
+      "desc": "A widely-used high-level programming language"
+    },
+    "c#": {
+      "title": "C#",
+      "desc": "A general-purpose, multi-paradigm programming language"
+    },
+    "java": {
+      "title": "Java",
+      "desc": "A class-based, object-oriented programming language"
+    },
+    "php": {
+      "title": "PHP",
+      "desc": "A server-side scripting language designed for web development"
+    },
+    "html": {
+      "title": "HTML",
+      "desc": "The standard markup language for creating web pages"
+    },
+    "android": {
+      "title": "Android",
+      "desc": "A mobile operating system based on the Linux kernel"
+    },
+    "css": {
+      "title": "CSS",
+      "desc": "A style sheet language used for describing the presentation of a document written in HTML"
+    },
+    "Reactjs": {
+      "title": "ReactJS",
+      "desc": "A JavaScript library for building user interfaces"
+    },
+    "node.js": {
+      "title": "Node.js",
+      "desc": "An open-source, cross-platform JavaScript runtime environment"
+    }
+  },
+  "userss": {
+    "title": "Users"
+  },
+  "profile": {
+    "joined": "Joined",
+    "editProfile": "Edit Profile",
+    "tagsWatched": "Tags watched",
+    "noTagsWatched": "0 tags watched",
+    "about": "About",
+    "noBioFound": "No bio found"
+    
+  },
+  "editProfile": {
+    "editYourProfile": "Edit Your Profile",
+    "publicInformation": "Public Information",
+    "displayName": "Display name",
+    "aboutMe": "About me",
+    "watchedTags": "Watched tags",
+    "addTagsInstructions": "Add tags separated by spaces",
+    "updateTagsField": "Update tags field",
+    "saveProfile": "Save profile",
+    "cancel": "Cancel"
+  },
+  "languages": {
+    "english": "English",
+    "spanish": "Español",
+    "french": "Français",
+    "hindi": "हिन्दी",
+    "portuguese": "Português",
+    "chinese": "中文"
+  },
+  "languageSwitcher": {
+    "enterEmail": "Please enter your email address:",
+    "enterPhoneNumber": "Please enter your phone number:",
+    "otpSentTo": "An OTP has been sent to",
+    "verifyOTP": "Verify OTP",
+    "failedToSendOTP": "Failed to send OTP. Please try again.",
+    "invalidOTP": "Invalid OTP. Please try again."
+  }
+  
+}
+

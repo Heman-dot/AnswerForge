@@ -1,0 +1,202 @@
+{
+  "DisplayName": "Nombre para mostrar",
+  "PhoneNumber": "Número de teléfono",
+  "Email": "Correo electrónico",
+  "Password": "Contraseña",
+  "PleaseFillOutAllFields": "Por favor, complete todos los campos",
+  "AuthenticationFailed": "La autenticación falló. Por favor, inténtelo de nuevo.",
+  "Processing": "Procesando...",
+  "SignUp": "Registrarse",
+  "Login": "Iniciar sesión",
+  "Hide": "Ocultar",
+  "Show": "Mostrar",
+  "ForgotPassword": "¿Olvidó su contraseña?",
+  "AlreadyHaveAccount": "¿Ya tienes una cuenta?",
+  "DontHaveAccount": "¿No tienes una cuenta?",
+  "about": "Acerca de",
+  "products": "Productos",
+  "forTeams": "Para Equipos",
+  "searchPlaceholder": "Buscar...",
+  "login": "Iniciar sesión",
+  "logout": "Cerrar sesión",
+  "topQuestions": "Preguntas principales",
+  "allQuestions": "Todas las preguntas",
+  "askQuestion": "Hacer una pregunta",
+  "loginAlert": "Inicia sesión o regístrate para hacer una pregunta",
+  "loading": "Cargando...",
+  "questionsCount": "preguntas",
+  "votes": "votos",
+  "answers": "respuestas",
+  "asked": "preguntado",
+  "home": "Inicio",
+  "public": "Público",
+  "questions": "Preguntas",
+  "tags": "Etiquetas",
+  "users": "Usuarios",
+  "overflow_blog": "El Blog Overflow",
+  "podcast_title": "La observabilidad es clave para el futuro del software (y tu carrera DevOps)",
+  "meta_title": "Destacado en Meta",
+  "review_queue": "Flujos de trabajo de la cola de revisión - Versión final...",
+  "valued_associates": "Damos la bienvenida a Asociados Valorados: #958 - V2Blast #959 - SpencerG",
+  "outdated_answers": "Respuestas obsoletas: la respuesta aceptada ya no está fijada en Stack Overflow",
+  "hot_meta_posts": "Publicaciones candentes en Meta",
+  "spam_flag_declined": "¿Por qué se rechazó esta señal de spam, pero se marcó la pregunta como spam?",
+  "best_course_of_action": "¿Cuál es la mejor acción a tomar cuando un usuario tiene suficiente reputación para...",
+  "how_to_ask_help": "¿Es útil un enlace a la página de ayuda \"Cómo hacer preguntas\" como comentario?",
+  "watchedTags": "Etiquetas seguidas",
+  "askaQuestion": {
+    "pageTitle": "Hacer una pregunta pública",
+    "title": {
+      "label": "Título",
+      "placeholder": "ej. ¿Existe una función en R para encontrar el índice de un elemento en un vector?"
+    },
+    "body": {
+      "label": "Cuerpo",
+      "placeholder": "Incluye toda la información necesaria para responder tu pregunta"
+    },
+    "tags": {
+      "label": "Etiquetas",
+      "placeholder": "ej. (xml typescript wordpress)"
+    },
+    "submitButton": "Revisar tu pregunta",
+    "alerts": {
+      "emptyFields": "Por favor, completa todos los campos",
+      "loginRequired": "Inicia sesión para hacer una pregunta"
+    }
+  },
+  "aboutAuth": {
+    "title": "Únase a la comunidad de Stack Overflow",
+    "askQuestion": "Desatránquese — haga una pregunta",
+    "unlockPrivileges": "Desbloquee nuevos privilegios como votar y comentar",
+    "saveFavorites": "Guarde sus etiquetas, filtros y trabajos favoritos",
+    "earnReputation": "Gane reputación y medallas",
+    "collaborate": "Colabore y comparta conocimientos con un grupo privado para",
+    "teamsOffer": "Obtenga Stack Overflow for Teams gratis para hasta 50 usuarios."
+  },
+  "forgotPassword": {
+    "title": "Olvidó su contraseña",
+    "email": "Correo electrónico",
+    "submit": "Enviar",
+    "login": "Iniciar sesión",
+    "codeSent": "Código enviado al correo electrónico",
+    "userNotFound": "Usuario no encontrado! Por favor, regístrate",
+    "somethingWentWrong": "Algo salió mal",
+    "enterCode": "Introduzca el código",
+    "enterCodeMessage": "Ingrese el código de 6 dígitos enviado a su correo electrónico.",
+    "invalidCode": "Código inválido"
+  },
+  "resetPassword": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "submit": "Enviar",
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+    "passwordChangeSuccess": "Contraseña cambiada con éxito",
+    "somethingWentWrong": "Algo salió mal"
+  },
+  "displayAnswer": {
+    "share": "Compartir",
+    "delete": "Eliminar",
+    "answered": "respondido"
+  },
+  "questionsDetails": {
+    "loading": "Cargando...",
+    "share": "Compartir",
+    "delete": "Eliminar",
+    "asked": "preguntado",
+    "yourAnswer": "Tu respuesta",
+    "postYourAnswer": "Publica tu respuesta",
+    "browseOther": "Explora otras preguntas etiquetadas",
+    "or": "o",
+    "askYourQuestion": "haz tu propia pregunta.",
+    "answers": "Respuestas"
+  },
+  "tagss": {
+    "title": "Etiquetas",
+    "description1": "Una etiqueta es una palabra clave o etiqueta que categoriza tu pregunta con otras preguntas similares.",
+    "description2": "Usar las etiquetas correctas facilita que otros encuentren y respondan tu pregunta."
+  },
+  "alltags": {
+    "javascript": {
+      "title": "JavaScript",
+      "desc": "Un lenguaje de programación interpretado de alto nivel"
+    },
+    "python": {
+      "title": "Python",
+      "desc": "Un lenguaje de programación de alto nivel ampliamente utilizado"
+    },
+    "c#": {
+      "title": "C#",
+      "desc": "Un lenguaje de programación multi-paradigma de propósito general"
+    },
+    "java": {
+      "title": "Java",
+      "desc": "Un lenguaje de programación orientado a objetos basado en clases"
+    },
+    "php": {
+      "title": "PHP",
+      "desc": "Un lenguaje de script del lado del servidor diseñado para el desarrollo web"
+    },
+    "html": {
+      "title": "HTML",
+      "desc": "El lenguaje de marcado estándar para crear páginas web"
+    },
+    "android": {
+      "title": "Android",
+      "desc": "Un sistema operativo móvil basado en el kernel Linux"
+    },
+    "css": {
+      "title": "CSS",
+      "desc": "Un lenguaje de hojas de estilo utilizado para describir la presentación de un documento escrito en HTML"
+    },
+    "Reactjs": {
+      "title": "ReactJS",
+      "desc": "Una biblioteca de JavaScript para construir interfaces de usuario"
+    },
+    "node.js": {
+      "title": "Node.js",
+      "desc": "Un entorno de ejecución de JavaScript de código abierto y multiplataforma"
+    }
+  },
+  "userss": {
+    "title": "Usuarios"
+  },
+  "profile": {
+    "joined": "Se unió",
+    "editProfile": "Editar Perfil",
+    "tagsWatched": "Etiquetas seguidas",
+    "noTagsWatched": "0 etiquetas seguidas",
+    "about": "Acerca de",
+    "noBioFound": "No se encontró información"
+  },
+  "editProfile": {
+    "editYourProfile": "Editar tu perfil",
+    "publicInformation": "Información pública",
+    "displayName": "Nombre de usuario",
+    "aboutMe": "Acerca de mí",
+    "watchedTags": "Etiquetas seguidas",
+    "addTagsInstructions": "Añade etiquetas separadas por espacios",
+    "updateTagsField": "Actualiza el campo de etiquetas",
+    "saveProfile": "Guardar perfil",
+    "cancel": "Cancelar"
+  },
+  "languages": {
+    "english": "Inglés",
+    "spanish": "Español",
+    "french": "Francés",
+    "hindi": "हिन्दी",
+    "portuguese": "Portugués",
+    "chinese": "Chino"
+  },
+  "languageSwitcher": {
+    "enterEmail": "Por favor, ingresa tu dirección de correo electrónico:",
+    "enterPhoneNumber": "Por favor, ingresa tu número de teléfono:",
+    "otpSentTo": "Se ha enviado un OTP a",
+    "verifyOTP": "Verificar OTP",
+    "failedToSendOTP": "Falló el envío del OTP. Por favor, inténtalo de nuevo.",
+    "invalidOTP": "OTP inválido. Por favor, inténtalo de nuevo."
+  }
+
+  
+}

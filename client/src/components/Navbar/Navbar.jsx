@@ -6,13 +6,15 @@ import decode from "jwt-decode";
 import logo from "../../assets/logo.png";
 import search from "../../assets/search-solid.svg";
 import Avatar from "../../components/Avatar/Avatar";
+import { useTranslation } from "react-i18next";
 import "./Navbar.css";
 import { setCurrentUser } from "../../actions/currentUser";
 import bars from "../../assets/bars-solid.svg";
 
 const Navbar = ({ handleSlideIn }) => {
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
-  var User = useSelector((state) => state.currentUserReducer);
+  const User = useSelector((state) => state.currentUserReducer);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -43,23 +45,33 @@ const Navbar = ({ handleSlideIn }) => {
             <img src={logo} alt="logo" />
           </Link>
           <Link to="/" className="nav-item nav-btn res-nav">
-            About
+            {t("about")}
           </Link>
           <Link to="/" className="nav-item nav-btn res-nav">
-            Products
+            {t("products")}
           </Link>
           <Link to="/" className="nav-item nav-btn res-nav">
-            For Teams
+            {t("forTeams")}
           </Link>
           <form>
-            <input style={{marginLeft:"-10%"}} type="text" placeholder="Search..." />
-            <img style={{marginLeft:"-10%"}}  src={search} alt="search" width="18" className="search-icon" />
+            <input
+              style={{ marginLeft: "-10%" }}
+              type="text"
+              placeholder={t("searchPlaceholder")}
+            />
+            <img
+              style={{ marginLeft: "-10%" }}
+              src={search}
+              alt="search"
+              width="18"
+              className="search-icon"
+            />
           </form>
         </div>
         <div className="navbar-2">
           {User === null ? (
             <Link to="/Auth" className="nav-item nav-links">
-              Log in
+              {t("login")}
             </Link>
           ) : (
             <>
@@ -78,7 +90,7 @@ const Navbar = ({ handleSlideIn }) => {
                 </Link>
               </Avatar>
               <button className="nav-item nav-links" onClick={handleLogout}>
-                Log out
+                {t("logout")}
               </button>
             </>
           )}

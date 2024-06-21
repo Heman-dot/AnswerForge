@@ -1,0 +1,202 @@
+{
+  "DisplayName": "Nom d'affichage",
+  "PhoneNumber": "Numéro de téléphone",
+  "Email": "E-mail",
+  "Password": "Mot de passe",
+  "PleaseFillOutAllFields": "Veuillez remplir tous les champs",
+  "AuthenticationFailed": "Échec de l'authentification. Veuillez réessayer.",
+  "Processing": "Traitement...",
+  "SignUp": "S'inscrire",
+  "Login": "Se connecter",
+  "Hide": "Cacher",
+  "Show": "Montrer",
+  "ForgotPassword": "Mot de passe oublié?",
+  "AlreadyHaveAccount": "Vous avez déjà un compte?",
+  "DontHaveAccount": "Vous n'avez pas de compte?",
+  "about": "À propos",
+  "products": "Produits",
+  "forTeams": "Pour les Équipes",
+  "searchPlaceholder": "Rechercher...",
+  "login": "Se connecter",
+  "logout": "Se déconnecter",
+  "topQuestions": "Questions principales",
+  "allQuestions": "Toutes les questions",
+  "askQuestion": "Poser une question",
+  "loginAlert": "Connectez-vous ou inscrivez-vous pour poser une question",
+  "loading": "Chargement...",
+  "questionsCount": "questions",
+  "votes": "votes",
+  "answers": "réponses",
+  "asked": "demandé",
+  "home": "Accueil",
+  "public": "Public",
+  "questions": "Questions",
+  "tags": "Balises",
+  "users": "Utilisateurs",
+  "overflow_blog": "Le Blog Overflow",
+  "podcast_title": "L'observabilité est essentielle pour l'avenir du logiciel (et votre carrière DevOps)",
+  "meta_title": "En vedette sur Meta",
+  "review_queue": "Flux de travail de la file d'attente de révision - Version finale...",
+  "valued_associates": "Accueillons avec plaisir les associés de valeur : #958 - V2Blast #959 - SpencerG",
+  "outdated_answers": "Réponses obsolètes : la réponse acceptée n'est plus épinglée sur Stack Overflow",
+  "hot_meta_posts": "Articles chauds sur Meta",
+  "spam_flag_declined": "Pourquoi ce signal de spam a-t-il été refusé alors que la question était marquée comme spam ?",
+  "best_course_of_action": "Quelle est la meilleure stratégie à adopter lorsqu'un utilisateur a une réputation suffisamment élevée pour...",
+  "how_to_ask_help": "Est-ce qu'un lien vers la page d'aide \"Comment poser une question\" est un commentaire utile ?",
+  "watchedTags": "Tags suivis",
+  "askaQuestion": {
+    "pageTitle": "Poser une question publique",
+    "title": {
+      "label": "Titre",
+      "placeholder": "ex. Existe-t-il une fonction en R pour trouver l'indice d'un élément dans un vecteur?"
+    },
+    "body": {
+      "label": "Corps",
+      "placeholder": "Incluez toutes les informations nécessaires pour répondre à votre question"
+    },
+    "tags": {
+      "label": "Tags",
+      "placeholder": "ex. (xml typescript wordpress)"
+    },
+    "submitButton": "Réviser votre question",
+    "alerts": {
+      "emptyFields": "Veuillez remplir tous les champs",
+      "loginRequired": "Connectez-vous pour poser une question"
+    }
+  },
+  "aboutAuth": {
+    "title": "Rejoignez la communauté Stack Overflow",
+    "askQuestion": "Débloquez-vous — posez une question",
+    "unlockPrivileges": "Débloquez de nouveaux privilèges comme voter et commenter",
+    "saveFavorites": "Enregistrez vos tags, filtres et emplois favoris",
+    "earnReputation": "Gagnez en réputation et badges",
+    "collaborate": "Collaborez et partagez vos connaissances avec un groupe privé pour",
+    "teamsOffer": "Obtenez Stack Overflow for Teams gratuitement pour jusqu'à 50 utilisateurs."
+  },
+  "forgotPassword": {
+    "title": "Mot de passe oublié",
+    "email": "Email",
+    "submit": "Soumettre",
+    "login": "Connexion",
+    "codeSent": "Code envoyé à l'email",
+    "userNotFound": "Utilisateur non trouvé! Veuillez vous inscrire",
+    "somethingWentWrong": "Quelque chose a mal tourné",
+    "enterCode": "Entrer le code",
+    "enterCodeMessage": "Entrez le code à 6 chiffres envoyé à votre email.",
+    "invalidCode": "Code invalide"
+  },
+  "resetPassword": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "submit": "Enviar",
+    "passwordMismatch": "Las contraseñas no coinciden",
+    "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+    "passwordChangeSuccess": "Contraseña cambiada con éxito",
+    "somethingWentWrong": "Algo salió mal"
+  },
+  "displayAnswer": {
+    "share": "Partager",
+    "delete": "Supprimer",
+    "answered": "répondu"
+  },
+  "questionsDetails": {
+    "loading": "Chargement...",
+    "share": "Partager",
+    "delete": "Supprimer",
+    "asked": "demandé",
+    "yourAnswer": "Votre réponse",
+    "postYourAnswer": "Postez votre réponse",
+    "browseOther": "Parcourir d'autres questions étiquetées",
+    "or": "ou",
+    "askYourQuestion": "posez votre propre question.",
+    "answers": "Réponses"
+
+  },
+  "tagss": {
+    "title": "Étiquettes",
+    "description1": "Une étiquette est un mot-clé ou une étiquette qui catégorise votre question avec d'autres questions similaires.",
+    "description2": "Utiliser les bonnes étiquettes facilite la recherche et la réponse à votre question par d'autres personnes."
+  },
+  "alltags": {
+    "javascript": {
+      "title": "JavaScript",
+      "desc": "Un langage de programmation interprété de haut niveau"
+    },
+    "python": {
+      "title": "Python",
+      "desc": "Un langage de programmation de haut niveau largement utilisé"
+    },
+    "c#": {
+      "title": "C#",
+      "desc": "Un langage de programmation multi-paradigme à usage général"
+    },
+    "java": {
+      "title": "Java",
+      "desc": "Un langage de programmation orienté objet basé sur des classes"
+    },
+    "php": {
+      "title": "PHP",
+      "desc": "Un langage de script côté serveur conçu pour le développement web"
+    },
+    "html": {
+      "title": "HTML",
+      "desc": "Le langage de balisage standard pour créer des pages web"
+    },
+    "android": {
+      "title": "Android",
+      "desc": "Un système d'exploitation mobile basé sur le noyau Linux"
+    },
+    "css": {
+      "title": "CSS",
+      "desc": "Un langage de feuille de style utilisé pour décrire la présentation d'un document écrit en HTML"
+    },
+    "Reactjs": {
+      "title": "ReactJS",
+      "desc": "Une bibliothèque JavaScript pour construire des interfaces utilisateur"
+    },
+    "node.js": {
+      "title": "Node.js",
+      "desc": "Un environnement d'exécution JavaScript open-source et multiplateforme"
+    }
+  },
+  "userss": {
+    "title": "Utilisateurs"
+  },
+  "profile": {
+    "joined": "Rejoint",
+    "editProfile": "Modifier le profil",
+    "tagsWatched": "Étiquettes suivies",
+    "noTagsWatched": "0 étiquettes suivies",
+    "about": "À propos",
+    "noBioFound": "Aucune bio trouvée"
+  },
+  "editProfile": {
+    "editYourProfile": "Modifier votre profil",
+    "publicInformation": "Informations publiques",
+    "displayName": "Nom d'affichage",
+    "aboutMe": "À propos de moi",
+    "watchedTags": "Tags suivis",
+    "addTagsInstructions": "Ajoutez des tags séparés par des espaces",
+    "updateTagsField": "Mettre à jour le champ des tags",
+    "saveProfile": "Enregistrer le profil",
+    "cancel": "Annuler"
+  },
+  "languages": {
+    "english": "Anglais",
+    "spanish": "Espagnol",
+    "french": "Français",
+    "hindi": "हिन्दी",
+    "portuguese": "Portugais",
+    "chinese": "Chinois"
+  },
+  "languageSwitcher": {
+    "enterEmail": "Veuillez saisir votre adresse e-mail :",
+    "enterPhoneNumber": "Veuillez saisir votre numéro de téléphone :",
+    "otpSentTo": "Un OTP a été envoyé à",
+    "verifyOTP": "Vérifier OTP",
+    "failedToSendOTP": "Échec de l'envoi de l'OTP. Veuillez réessayer.",
+    "invalidOTP": "OTP invalide. Veuillez réessayer."
+  }
+
+}

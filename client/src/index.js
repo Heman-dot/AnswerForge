@@ -5,6 +5,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import i18n from 'i18next';
 import Reducers from "./reducers";
 
 const store = createStore(Reducers, compose(applyMiddleware(thunk)));

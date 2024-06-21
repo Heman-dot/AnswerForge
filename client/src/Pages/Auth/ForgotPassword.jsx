@@ -3,8 +3,11 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
+import { useTranslation } from 'react-i18next';
 
 export default function ForgotPassword() {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [progress, setProgress] = useState(0);
@@ -34,27 +37,27 @@ export default function ForgotPassword() {
       await axios.post(`http://localhost:8080/sendEmail`, { email, OTP })
         .then(res => {
           if (res.data === 'pass') {
-            toast.success("Code sent to the email");
+            toast.success(t('forgotPassword.codeSent'));
             setShowPopup(true);
           } else if (res.data === 'notexist') {
-            toast.error("User not found! Please sign up");
+            toast.error(t('forgotPassword.userNotFound'));
           } else if (res.data === 'fail') {
-            toast.error("Something went wrong");
+            toast.error(t('forgotPassword.somethingWentWrong'));
           }
         })
         .catch(() => {
-          toast.error("Something went wrong");
+          toast.error(t('forgotPassword.somethingWentWrong'));
         });
       setProgress(70);
     } catch (e) {
-      toast.error("Something went wrong");
+      toast.error(t('forgotPassword.somethingWentWrong'));
     }
     setProgress(100);
   };
 
   const otpCheck = () => {
     if (otp !== otpValue) {
-      toast.error("Invalid Code");
+      toast.error(t('forgotPassword.invalidCode'));
     } else {
       navigate("/resetpassword");
     }
@@ -71,7 +74,7 @@ export default function ForgotPassword() {
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-container">
-            <h2>Enter Code</h2>
+            <h2>{t('forgotPassword.enterCode')}</h2>
             <input style={{marginLeft:"-4%"}}
               type="text"
               maxLength="6"
@@ -79,8 +82,8 @@ export default function ForgotPassword() {
               onChange={handleOtpChange}
               className="otp-input"
             />
-            <p>Enter the 6-digit code sent to your Email.</p>
-            <button onClick={otpCheck} className="popup-btn">Submit</button>
+            <p>{t('forgotPassword.enterCodeMessage')}</p>
+            <button onClick={otpCheck} className="popup-btn">{t('forgotPassword.submit')}</button>
           </div>
         </div>
       )}
@@ -88,9 +91,9 @@ export default function ForgotPassword() {
       <form onSubmit={sendEmail} className="forgot-password-form">
         <section className="auth-section">
           <div className="auth-container-2">
-            <h2 className="title">Forgot Password</h2>
+            <h2 className="title">{t('forgotPassword.title')}</h2>
             <label htmlFor="email">
-              <h4>Email</h4>
+              <h4>{t('forgotPassword.email')}</h4>
               <input
                 type="email"
                 id="email"
@@ -100,9 +103,9 @@ export default function ForgotPassword() {
                 required
               />
             </label>
-            <button type="submit" className="auth-btn">Submit</button>
+            <button type="submit" className="auth-btn">{t('forgotPassword.submit')}</button>
             <p>
-              <Link to="/Auth">Login</Link>
+              <Link to="/Auth">{t('forgotPassword.login')}</Link>
             </p>
           </div>
         </section>
@@ -136,7 +139,7 @@ export default function ForgotPassword() {
         }
 
         .otp-input {
-          width: 100%;
+          width: 50%;
           padding: 0.75rem;
           margin-bottom: 1rem;
           border: 1px solid #ccc;

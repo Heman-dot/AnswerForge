@@ -1,6 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import "./RightSidebar.css";
 
 const WidgetTags = () => {
+  const { t } = useTranslation();
+
   const tags = [
     "c",
     "css",
@@ -21,7 +25,7 @@ const WidgetTags = () => {
 
   return (
     <div className="widget-tags">
-      <h4>Watched tags</h4>
+      <h4>{t("watchedTags")}</h4>
       <div className="widget-tags-div">
         {tags.map((tag) => (
           <p key={tag}>{tag}</p>

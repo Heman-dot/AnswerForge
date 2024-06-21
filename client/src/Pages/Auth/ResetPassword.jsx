@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function ResetPassword() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
+
   const [password, setPassword] = useState('');
   const [cpassword, setCpassword] = useState('');
   const [email, setEmail] = useState('');
@@ -13,25 +16,25 @@ export default function ResetPassword() {
     e.preventDefault();
     try {
       if (password !== cpassword) {
-        toast.error("Passwords do not match");
+        toast.error(t('resetPassword.passwordMismatch'));
       } else if (password.length < 6) {
-        toast.error("Password must be at least 6 characters");
+        toast.error(t('resetPassword.passwordTooShort'));
       } else {
         await axios.post(`http://localhost:8080/resetpassword`, { email, password })
           .then(res => {
             if (res.data === "pass") {
-              toast.success("Password changed successfully");
+              toast.success(t('resetPassword.passwordChangeSuccess'));
               navigate("/Auth");
             } else if (res.data === "fail") {
-              toast.error("Something went wrong!");
+              toast.error(t('resetPassword.somethingWentWrong'));
             }
           })
           .catch(() => {
-            toast.error("Something went wrong!");
+            toast.error(t('resetPassword.somethingWentWrong'));
           });
       }
     } catch (e) {
-      toast.error("Something went wrong!");
+      toast.error(t('resetPassword.somethingWentWrong'));
     }
   };
 
@@ -95,7 +98,7 @@ export default function ResetPassword() {
       <div className="auth-container-2">
         <form onSubmit={submit}>
           <label htmlFor="email">
-            <h4>Email</h4>
+            <h4>{t('resetPassword.email')}</h4>
             <input
               type="email"
               name="email"
@@ -106,7 +109,7 @@ export default function ResetPassword() {
             />
           </label>
           <label htmlFor="password">
-            <h4>Password</h4>
+            <h4>{t('resetPassword.password')}</h4>
             <input
               type="password"
               name="password"
@@ -117,7 +120,7 @@ export default function ResetPassword() {
             />
           </label>
           <label htmlFor="cpassword">
-            <h4>Confirm Password</h4>
+            <h4>{t('resetPassword.confirmPassword')}</h4>
             <input
               type="password"
               name="cpassword"
@@ -128,7 +131,7 @@ export default function ResetPassword() {
             />
           </label>
           <button type="submit" className="auth-btn">
-            Submit
+            {t('resetPassword.submit')}
           </button>
         </form>
       </div>

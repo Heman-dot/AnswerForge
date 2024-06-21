@@ -8,9 +8,27 @@ import { fetchAllQuestions } from "./actions/question";
 import { fetchAllUsers } from "./actions/users";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import i18n from "./i18n"; 
+import { I18nextProvider } from 'react-i18next';
 
 
 function App() {
+  useEffect(() => {
+    const lang = i18n.language;
+    switch (lang) {
+      case "fr":
+        document.body.style.backgroundColor = "#FFFAA0";
+        break;
+      case "hi":
+        document.body.style.backgroundColor = "#89CFF0";
+        break;
+      case "zh":
+        document.body.style.backgroundColor = "#90EE90";
+        break;
+      default:
+        document.body.style.backgroundColor = "white";
+    }
+  }, [i18n.language]);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,6 +56,7 @@ function App() {
       <Router>
         <Navbar handleSlideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
+
       </Router>
     </div>
   );
