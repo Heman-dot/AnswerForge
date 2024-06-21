@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { updateProfile } from "../../actions/users";
 
 const EditProfileForm = ({ currentUser, setSwitch }) => {
+  const { t } = useTranslation(); // Assuming useTranslation hook from i18n library
   const [name, setName] = useState(currentUser?.result?.name);
   const [about, setAbout] = useState(currentUser?.result?.about);
   const [tags, setTags] = useState([]);
   const dispatch = useDispatch();
-  console.log(tags);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (tags[0] === "" || tags.length === 0) {
-      alert("Update tags field");
+      alert(t("editProfile.updateTagsField"));
     } else {
       dispatch(updateProfile(currentUser?.result?._id, { name, about, tags }));
     }
@@ -20,11 +22,11 @@ const EditProfileForm = ({ currentUser, setSwitch }) => {
 
   return (
     <div>
-      <h1 className="edit-profile-title">Edit Your Profile</h1>
-      <h2 className="edit-profile-title-2">Public information</h2>
+      <h1 className="edit-profile-title">{t("editProfile.editYourProfile")}</h1>
+      <h2 className="edit-profile-title-2">{t("editProfile.publicInformation")}</h2>
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <label htmlFor="name">
-          <h3>Display name</h3>
+          <h3>{t("editProfile.displayName")}</h3>
           <input
             type="text"
             value={name}
@@ -32,7 +34,7 @@ const EditProfileForm = ({ currentUser, setSwitch }) => {
           />
         </label>
         <label htmlFor="about">
-          <h3>About me</h3>
+          <h3>{t("editProfile.aboutMe")}</h3>
           <textarea
             id="about"
             cols="30"
@@ -42,8 +44,8 @@ const EditProfileForm = ({ currentUser, setSwitch }) => {
           ></textarea>
         </label>
         <label htmlFor="tags">
-          <h3>Watched tags</h3>
-          <p>Add tags separated by 1 space</p>
+          <h3>{t("editProfile.watchedTags")}</h3>
+          <p>{t("editProfile.addTagsInstructions")}</p>
           <input
             type="text"
             id="tags"
@@ -51,13 +53,13 @@ const EditProfileForm = ({ currentUser, setSwitch }) => {
           />
         </label>
         <br />
-        <input type="submit" value="Save profile" className="user-submit-btn" />
+        <input type="submit" value={t("editProfile.saveProfile")} className="user-submit-btn" />
         <button
           type="button"
           className="user-cancel-btn"
           onClick={() => setSwitch(false)}
         >
-          Cancel
+          {t("editProfile.cancel")}
         </button>
       </form>
     </div>

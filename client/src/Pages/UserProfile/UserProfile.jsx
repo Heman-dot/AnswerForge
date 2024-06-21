@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBirthdayCake, faPen } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 import LeftSidebar from "../../components/LeftSidebar/LeftSidebar";
 import Avatar from "../../components/Avatar/Avatar";
@@ -12,6 +13,7 @@ import ProfileBio from "./ProfileBio";
 import "./UsersProfile.css";
 
 const UserProfile = ({ slideIn, handleSlideIn }) => {
+  const { t } = useTranslation(); 
   const { id } = useParams();
   const users = useSelector((state) => state.usersReducer);
   const currentProfile = users.filter((user) => user._id === id)[0];
@@ -37,7 +39,7 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
               <div className="user-name">
                 <h1>{currentProfile?.name}</h1>
                 <p>
-                  <FontAwesomeIcon icon={faBirthdayCake} /> Joined{" "}
+                  <FontAwesomeIcon icon={faBirthdayCake} /> {t("profile.joined")}{" "}
                   {moment(currentProfile?.joinedOn).fromNow()}
                 </p>
               </div>
@@ -48,7 +50,7 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
                 onClick={() => setSwitch(true)}
                 className="edit-profile-btn"
               >
-                <FontAwesomeIcon icon={faPen} /> Edit Profile
+                <FontAwesomeIcon icon={faPen} /> {t("profile.editProfile")}
               </button>
             )}
           </div>
