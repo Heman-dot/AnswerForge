@@ -47,7 +47,6 @@ app.post('/send-otp', async (req, res) => {
   const otp = Math.floor(100000 + Math.random() * 900000); 
   if (method === 'sms') {
     const phoneNumber = `+91${contact}`;
-    console.log(phoneNumber)
     const params = {
       'sender': process.env.SPRING_EDGE_SENDER_ID,
       'apikey': process.env.SPRING_EDGE_API_KEY,
@@ -66,7 +65,7 @@ app.post('/send-otp', async (req, res) => {
     });
 
   } else if (method === 'email') {
-    // Send OTP via Email using Nodemailer
+    // Send OTP via Email using Nodemailer 
     const mailOptions = {
       from: process.env.NODEMAILER_USER, 
       to: contact,

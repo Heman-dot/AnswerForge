@@ -110,7 +110,9 @@
     "browseOther": "浏览其他标记的问题",
     "or": "或",
     "askYourQuestion": "提出你自己的问题。",
-    "answers": "答案"
+    "answers": "答案",
+    "loginSignup": "登录 / 注册",
+    "copiedUrl": "已复制的 URL  "
   },
   "tagss": {
     "title": "标签",

@@ -110,7 +110,10 @@
     "browseOther": "Browse other Questions tagged",
     "or": "or",
     "askYourQuestion": "ask your own question.",
-    "answers": "Answers"
+    "answers": "Answers",
+    "loginSignup": "Login / Signup",
+    "copiedUrl": "Copied URL  "
+
   },
   "tagss": {
     "title": "Tags",

@@ -110,7 +110,9 @@
     "browseOther": "अन्य प्रश्न ब्राउज़ करें जो टैग किए गए हैं",
     "or": "या",
     "askYourQuestion": "अपना खुद का प्रश्न पूछें।",
-    "answers": "उत्तर"
+    "answers": "उत्तर",
+    "loginSignup": "लॉगिन / साइन अप",
+    "copiedUrl": "कॉपी किया गया URL "
   },
   "tagss": {
     "title": "टैग्स",

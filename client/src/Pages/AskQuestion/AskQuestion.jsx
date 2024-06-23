@@ -49,7 +49,9 @@ const AskQuestion = () => {
           )
         );
       } else alert(t("askaQuestion.alerts.emptyFields"));
-    } else alert(t("askaQuestion.alerts.loginRequired"));
+    } else {alert(t("askaQuestion.alerts.loginRequired"))
+    navigate("/Auth");
+  };
   };
 
   const handleEnter = (e) => {

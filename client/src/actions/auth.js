@@ -1,7 +1,7 @@
 import * as api from "../api";
 import { setCurrentUser } from "./currentUser";
 import { fetchAllUsers } from "./users";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export const signup = (authData, navigate) => async (dispatch) => {
   try {

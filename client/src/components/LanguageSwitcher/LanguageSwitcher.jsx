@@ -85,7 +85,7 @@ const LanguageSwitcher = ({ onOtpVerified }) => {
 
   return (
     <div>
-      <div className="language-switcher">
+      <div style={{marginTop:"-180%",marginLeft:"400%"}} className="language-switcher">
         <select onChange={changeLanguage} defaultValue={i18n.language}>
           <option value="en">{t('languages.english')}</option>
           <option value="es">{t('languages.spanish')}</option>

@@ -110,7 +110,9 @@
     "browseOther": "Explora otras preguntas etiquetadas",
     "or": "o",
     "askYourQuestion": "haz tu propia pregunta.",
-    "answers": "Respuestas"
+    "answers": "Respuestas",
+    "loginSignup": "Iniciar sesión / Registrarse",
+    "copiedUrl": "URL copiada  "
   },
   "tagss": {
     "title": "Etiquetas",
