@@ -170,7 +170,8 @@
     "tagsWatched": "关注的标签",
     "noTagsWatched": "0 个关注的标签",
     "about": "关于",
-    "noBioFound": "未找到个人简介"
+    "noBioFound": "未找到个人简介",
+    "loginHistory":"登录历史"
   },
   "editProfile": {
     "editYourProfile": "编辑您的个人资料",
@@ -198,6 +199,14 @@
     "verifyOTP": "验证 OTP",
     "failedToSendOTP": "发送 OTP 失败，请稍后再试。",
     "invalidOTP": "无效的 OTP，请重试。"
-  }
+  },
+  "accessTimeMessage": "移动设备仅在上午10点到下午1点之间开放访问。",
+  "loginHistory": "登录历史",
+    "IPAddress": "IP地址",
+    "Browser": "浏览器",
+    "OS": "操作系统",
+    "DeviceType": "设备类型",
+    "Timestamp": "时间戳"
+
 
 }

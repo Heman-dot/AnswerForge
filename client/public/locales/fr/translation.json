@@ -171,7 +171,8 @@
     "tagsWatched": "Étiquettes suivies",
     "noTagsWatched": "0 étiquettes suivies",
     "about": "À propos",
-    "noBioFound": "Aucune bio trouvée"
+    "noBioFound": "Aucune bio trouvée",
+    "loginHistory":"historique de connexion"
   },
   "editProfile": {
     "editYourProfile": "Modifier votre profil",
@@ -199,6 +200,17 @@
     "verifyOTP": "Vérifier OTP",
     "failedToSendOTP": "Échec de l'envoi de l'OTP. Veuillez réessayer.",
     "invalidOTP": "OTP invalide. Veuillez réessayer."
-  }
+  },
+  "accessTimeMessage": "L'accès via un appareil mobile est uniquement de 10h à 13h.",
+  "signupSuccess": "Inscription réussie",
+    "loginSuccess": "Connexion réussie",
+    "wrongCredentials": "Identifiants incorrects",
+    "loginHistory": "Historique de Connexion",
+    "IPAddress": "Adresse IP",
+    "Browser": "Navigateur",
+    "OS": "Système d'Exploitation",
+    "DeviceType": "Type de Périphérique",
+    "Timestamp": "Horodatage"
+
 
 }

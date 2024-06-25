@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBirthdayCake, faPen } from "@fortawesome/free-solid-svg-icons";
+import { faBirthdayCake, faPen, faHistory } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import { useTranslation } from "react-i18next";
 
@@ -10,6 +10,7 @@ import LeftSidebar from "../../components/LeftSidebar/LeftSidebar";
 import Avatar from "../../components/Avatar/Avatar";
 import EditProfileForm from "./EditProfileForm";
 import ProfileBio from "./ProfileBio";
+import LoginHistory from "./LoginHistory"; 
 import "./UsersProfile.css";
 
 const UserProfile = ({ slideIn, handleSlideIn }) => {
@@ -19,6 +20,7 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
   const currentProfile = users.filter((user) => user._id === id)[0];
   const currentUser = useSelector((state) => state.currentUserReducer);
   const [Switch, setSwitch] = useState(false);
+  const [showLoginHistory, setShowLoginHistory] = useState(false); 
 
   return (
     <div className="home-container-1">
@@ -45,13 +47,23 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
               </div>
             </div>
             {currentUser?.result._id === id && (
-              <button
-                type="button"
-                onClick={() => setSwitch(true)}
-                className="edit-profile-btn"
-              >
-                <FontAwesomeIcon icon={faPen} /> {t("profile.editProfile")}
-              </button>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setSwitch(true)}
+                  className="edit-profile-btn"
+                >
+                  <FontAwesomeIcon icon={faPen} /> {t("profile.editProfile")}
+                </button>
+                <button
+                  style={{marginLeft:"0.5%" , marginTop:"2%"}}
+                  type="button"
+                  onClick={() => setShowLoginHistory(!showLoginHistory)}
+                  className="edit-profile-btn"
+                >
+                  <FontAwesomeIcon icon={faHistory} /> {t("profile.loginHistory")}
+                </button>
+              </div>
             )}
           </div>
           <>
@@ -60,6 +72,8 @@ const UserProfile = ({ slideIn, handleSlideIn }) => {
                 currentUser={currentUser}
                 setSwitch={setSwitch}
               />
+            ) : showLoginHistory ? (
+              <LoginHistory userId={currentProfile?._id} />
             ) : (
               <ProfileBio currentProfile={currentProfile} />
             )}

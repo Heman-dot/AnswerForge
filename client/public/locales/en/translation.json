@@ -171,7 +171,8 @@
     "tagsWatched": "Tags watched",
     "noTagsWatched": "0 tags watched",
     "about": "About",
-    "noBioFound": "No bio found"
+    "noBioFound": "No bio found",
+    "loginHistory":"Login History"
     
   },
   "editProfile": {
@@ -200,7 +201,18 @@
     "verifyOTP": "Verify OTP",
     "failedToSendOTP": "Failed to send OTP. Please try again.",
     "invalidOTP": "Invalid OTP. Please try again."
-  }
+  },
+  "accessTimeMessage": "Access Through Mobile device is only during 10AM to 1PM",
+  "signupSuccess": "Signup successful",
+    "loginSuccess": "Login successful",
+    "wrongCredentials": "Wrong credentials",
+    "loginHistory": "Login History",
+    "IPAddress": "IP Address",
+    "Browser": "Browser",
+    "OS": "Operating System",
+    "DeviceType": "Device Type",
+    "Timestamp": "Timestamp"
+
   
 }
 

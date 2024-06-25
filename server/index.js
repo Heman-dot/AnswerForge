@@ -6,6 +6,7 @@ import users from "./models/auth.js"
 import bcrypt from 'bcryptjs';
 import bodyParser from 'body-parser';
 import springedge from 'springedge';
+import  uaParser from 'ua-parser-js';
 
 dotenv.config();
 
@@ -13,7 +14,7 @@ import userRoutes from "./routes/users.js";
 import questionRoutes from "./routes/Questions.js";
 import answerRoutes from "./routes/Answers.js";
 import connectDB from "./connectMongoDb.js";
-
+import { login } from "./controllers/auth.js";
 
 
 // Connect to the database
@@ -65,7 +66,6 @@ app.post('/send-otp', async (req, res) => {
     });
 
   } else if (method === 'email') {
-    // Send OTP via Email using Nodemailer 
     const mailOptions = {
       from: process.env.NODEMAILER_USER, 
       to: contact,
@@ -139,6 +139,48 @@ app.post("/resetpassword", async (req, res) => {
     res.json("fail");
   }
 });
+
+
+app.post("/chrome-verify",async(req , res) =>{
+  const { method, contact, pass } = req.body;
+  const existingUser = await users.findOne({ contact });
+    if (!existingUser) {
+      return res.status(404).json({ message: "User does not exist." });
+    }
+    
+    const isPasswordCorrect = await bcrypt.compare(pass, existingUser.password);
+    if (!isPasswordCorrect) {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+  const userAgent = uaParser(req.headers['user-agent']);
+  const browser = userAgent.browser.name;
+  if(browser !== "Chrome"){
+    res.json({ success: true, browser });
+  }
+  else{
+    const otp = Math.floor(100000 + Math.random() * 900000); 
+  if (method === 'email') {
+    const mailOptions = {
+      from: process.env.NODEMAILER_USER, 
+      to: contact,
+      subject: 'Your OTP Code',
+      text: `Your OTP code is ${otp}`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        res.status(500).json({ success: false, error: error.message });
+      } else {
+        res.json({ success: true, otp });
+      }
+    });
+  } else {
+    res.status(400).json({ success: false, error: 'Invalid OTP method' });
+  }
+
+  }
+  
+})
 
 const PORT = process.env.PORT || 8080;
   

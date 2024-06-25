@@ -9,7 +9,7 @@ import { fetchAllUsers } from "./actions/users";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import i18n from "./i18n"; 
-import { I18nextProvider } from 'react-i18next';
+import MobileAccessRestriction from "./components/MobileAccessRestriction/MobileAccessRestriction";
 
 
 function App() {
@@ -54,6 +54,7 @@ function App() {
     <div className="App">
       <ToastContainer /> {/* Add ToastContainer here */}
       <Router>
+      <MobileAccessRestriction /> 
         <Navbar handleSlideIn={handleSlideIn} />
         <AllRoutes slideIn={slideIn} handleSlideIn={handleSlideIn} />
 

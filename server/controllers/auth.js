@@ -1,7 +1,10 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-
+import  uaParser from 'ua-parser-js';
 import users from "../models/auth.js";
+import dotenv from "dotenv";
+dotenv.config();
+
 
 export const signup = async (req, res) => {
   const { name, email, password, phoneNumber } = req.body;
@@ -43,6 +46,16 @@ export const login = async (req, res) => {
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
+    
+    const userAgent = uaParser(req.headers['user-agent']);
+    const ip = req.ip;
+    const browser = userAgent.browser.name;
+    const os = userAgent.os.name;
+    const device = userAgent.device.type || 'desktop';
+
+    const loginTime = new Date();
+    existingUser.loginHistory.push({ ip, browser, os, device,loginTime });
+    await existingUser.save();
 
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },

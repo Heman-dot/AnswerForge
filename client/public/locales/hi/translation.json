@@ -171,7 +171,8 @@
     "tagsWatched": "देखी गई टैग",
   "noTagsWatched": "0 टैग देखे गए",
   "about": "बारे में",
-  "noBioFound": "कोई जीवनी नहीं मिली"
+  "noBioFound": "कोई जीवनी नहीं मिली",
+  "loginHistory":"लॉगिन इतिहास"
   },
   "editProfile": {
     "editYourProfile": "अपना प्रोफ़ाइल संपादित करें",
@@ -199,7 +200,15 @@
     "verifyOTP": "OTP सत्यापित करें",
     "failedToSendOTP": "OTP भेजने में विफल। कृपया पुन: प्रयास करें।",
     "invalidOTP": "अमान्य OTP। कृपया पुन: प्रयास करें।"
-  }
+  },
+  "accessTimeMessage": "मोबाइल डिवाइस के माध्यम से केवल सुबह 10 बजे से दोपहर 1 बजे तक ही पहुँच होगी।",
+  "loginHistory": "लॉगिन इतिहास",
+    "IPAddress": "आईपी पता",
+    "Browser": "ब्राउज़र",
+    "OS": "ऑपरेटिंग सिस्टम",
+    "DeviceType": "डिवाइस के प्रकार",
+    "Timestamp": "समय चिह्न"
+
   
 
 }

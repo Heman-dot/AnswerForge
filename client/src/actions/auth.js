@@ -27,8 +27,10 @@ export const login = (authData, navigate) => async (dispatch) => {
     toast.success("Login Successfull");
 
   } catch (error) {
-    console.log(error);
-    toast.error("Wrong Credentials");
-
+    if (error.response) {
+      if(error.response.status === 400){
+        toast.error("Wrong Credentials");
+      }
+    }
   }
 };

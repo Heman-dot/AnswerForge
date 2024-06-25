@@ -170,7 +170,8 @@
     "tagsWatched": "Tags seguidas",
     "noTagsWatched": "0 tags seguidas",
     "about": "Sobre",
-    "noBioFound": "Nenhuma biografia encontrada"
+    "noBioFound": "Nenhuma biografia encontrada",
+    "loginHistory":"histórico de login"
   },
   "editProfile": {
     "editYourProfile": "Editar seu perfil",
@@ -198,6 +199,14 @@
     "verifyOTP": "Verificar OTP",
     "failedToSendOTP": "Falha ao enviar OTP. Por favor, tente novamente.",
     "invalidOTP": "OTP inválido. Por favor, tente novamente."
-  }
+  },
+  "accessTimeMessage": "O acesso através de dispositivos móveis é apenas das 10h às 13h.",
+  "loginHistory": "Histórico de Login",
+    "IPAddress": "Endereço IP",
+    "Browser": "Navegador",
+    "OS": "Sistema Operacional",
+    "DeviceType": "Tipo de Dispositivo",
+    "Timestamp": "Carimbo de Data/Hora"
+
 
 }
