@@ -28,7 +28,7 @@ function App() {
       default:
         document.body.style.backgroundColor = "white";
     }
-  }, [i18n.language]);
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <ToastContainer /> {/* Add ToastContainer here */}
+      <ToastContainer /> 
       <Router>
       <MobileAccessRestriction /> 
         <Navbar handleSlideIn={handleSlideIn} />

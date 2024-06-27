@@ -83,17 +83,13 @@
     "somethingWentWrong": "Algo deu errado",
     "enterCode": "Digite o código",
     "enterCodeMessage": "Digite o código de 6 dígitos enviado para seu email.",
-    "invalidCode": "Código inválido"
-  },
-  "resetPassword": {
-    "email": "Email",
-    "password": "Senha",
-    "confirmPassword": "Confirmar Senha",
-    "submit": "Enviar",
-    "passwordMismatch": "As senhas não coincidem",
-    "passwordTooShort": "A senha deve ter pelo menos 6 caracteres",
-    "passwordChangeSuccess": "Senha alterada com sucesso",
-    "somethingWentWrong": "Algo deu errado"
+    "invalidCode": "Código inválido",
+    "emailOrPhone": "Email ou Telefone",
+    "resetPassword": "Redefinir senha",
+  "newPassword": "Nova senha",
+  "confirmPassword": "Confirmar senha",
+  "passwordChangeSuccess": "Senha alterada com sucesso",
+  "passwordMismatch": "Senhas não coincidem"
   },
   "displayAnswer": {
     "share": "Compartilhar",

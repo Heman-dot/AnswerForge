@@ -83,17 +83,13 @@
     "somethingWentWrong": "出了些问题",
     "enterCode": "输入代码",
     "enterCodeMessage": "输入发送到您邮箱的6位代码。",
-    "invalidCode": "无效代码"
-  },
-  "resetPassword": {
-    "email": "电子邮件",
-    "password": "密码",
-    "confirmPassword": "确认密码",
-    "submit": "提交",
-    "passwordMismatch": "密码不匹配",
-    "passwordTooShort": "密码必须至少有6个字符",
-    "passwordChangeSuccess": "密码修改成功",
-    "somethingWentWrong": "出了些问题"
+    "invalidCode": "无效代码",
+    "emailOrPhone": "邮箱或电话",
+    "resetPassword": "重设密码",
+  "newPassword": "新密码",
+  "confirmPassword": "确认密码",
+  "passwordChangeSuccess": "密码修改成功",
+  "passwordMismatch": "密码不匹配"
   },
   "displayAnswer": {
     "share": "分享",

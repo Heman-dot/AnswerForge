@@ -14,10 +14,8 @@ import userRoutes from "./routes/users.js";
 import questionRoutes from "./routes/Questions.js";
 import answerRoutes from "./routes/Answers.js";
 import connectDB from "./connectMongoDb.js";
-import { login } from "./controllers/auth.js";
 
 
-// Connect to the database
 connectDB();
 
 const app = express();
@@ -33,7 +31,6 @@ app.use(bodyParser.json());
 
 
 
-// Nodemailer configuration
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -42,7 +39,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Endpoint to send OTP
 app.post('/send-otp', async (req, res) => {
   const { method, contact } = req.body;
   const otp = Math.floor(100000 + Math.random() * 900000); 
@@ -70,7 +66,7 @@ app.post('/send-otp', async (req, res) => {
       from: process.env.NODEMAILER_USER, 
       to: contact,
       subject: 'Your OTP Code',
-      text: `Your OTP code is ${otp}`,
+      text: `Your OTP code for email verification is ${otp}`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
@@ -88,34 +84,61 @@ app.post('/send-otp', async (req, res) => {
 
 app.post("/sendEmail", async (req, res) => {
   try {
-    const email = req.body.email;
+    const contact = req.body.contact;
     const otp = req.body.OTP;
 
-    const check = await users.findOne({ email: email });
+    const isEmail = /\S+@\S+\.\S+/.test(contact);
+
+    const check = isEmail
+      ? await users.findOne({ email: contact })
+      : await users.findOne({ phoneNumber: contact });
 
     if (check) {
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.NODEMAILER_USER, 
-          pass: process.env.NODEMAILER_PWD,
-        },
-      });
+      if (isEmail) {
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: process.env.NODEMAILER_USER,
+            pass: process.env.NODEMAILER_PWD,
+          },
+        });
 
-      const mailOptions = {
-        from: "hemannarayanan_e@srmap.edu.in",
-        to: email,
-        subject: "Password Reset",
-        text: `The code to create a new password for the StackoverFlow account is ${otp}`,
-      };
+        const mailOptions = {
+          from: process.env.NODEMAILER_USER,
+          to: contact,
+          subject: 'Password Reset',
+          text: `The code to create a new password for the StackoverFlow account is ${otp}`,
+        };
 
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          res.json("fail");
-        } else {
-          res.json("pass");
-        }
-      });
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            res.json('fail');
+          } else {
+            res.json('pass');
+          }
+        });
+      }
+      else{
+        const phoneNumber = `+91${contact}`;
+      const params = {
+      'sender': process.env.SPRING_EDGE_SENDER_ID,
+      'apikey': process.env.SPRING_EDGE_API_KEY,
+      'to': `${phoneNumber}`,
+      'message': `Mobile Number verification code is ${otp} Do not share it`,
+      'format': 'json'
+    };
+
+    springedge.messages.send(params, 5000, (err, response) => {
+      if (err) {
+        res.json('fail');
+        console.error('Error sending OTP via SMS:', err);
+        return res.status(500).json({ success: false, error: err.message });
+      }
+      console.log('Spring Edge Response:', response);
+      res.json('pass');
+    });
+
+      }
     } else {
       res.json("notexist");
     }
@@ -125,17 +148,29 @@ app.post("/sendEmail", async (req, res) => {
 });
 
 app.post("/resetpassword", async (req, res) => {
-  const {email,password} = req.body;
+  const { contact, password } = req.body;
   try {
     const hashedPassword = await bcrypt.hash(password, 12);
-    const newPass = hashedPassword;
-    await users.updateOne(
-      { email: email },
-      { $set: { password: newPass } }
-    );
+    const isEmail = /\S+@\S+\.\S+/.test(contact);
+    const filter = isEmail ? { email: contact } : { phoneNumber: contact };
 
-    res.json("pass");
+    const user = await users.findOne(filter);
+    if (!user) {
+      console.log("User does not exist");
+      return res.json("notexist");
+    }
+
+    const update = await users.updateOne(filter, { $set: { password: hashedPassword } });
+
+    if (update.modifiedCount > 0) {
+      console.log("Password updated successfully");
+      res.json("pass");
+    } else {
+      console.log("Password update failed");
+      res.json("fail");
+    }
   } catch (e) {
+    console.error(`Error updating password: ${e.message}`);
     res.json("fail");
   }
 });
@@ -143,11 +178,10 @@ app.post("/resetpassword", async (req, res) => {
 
 app.post("/chrome-verify",async(req , res) =>{
   const { method, contact, pass } = req.body;
-  const existingUser = await users.findOne({ contact });
+  const existingUser = await users.findOne({ email:contact });
     if (!existingUser) {
       return res.status(404).json({ message: "User does not exist." });
     }
-    
     const isPasswordCorrect = await bcrypt.compare(pass, existingUser.password);
     if (!isPasswordCorrect) {
       return res.status(400).json({ message: "Invalid credentials" });
@@ -164,7 +198,7 @@ app.post("/chrome-verify",async(req , res) =>{
       from: process.env.NODEMAILER_USER, 
       to: contact,
       subject: 'Your OTP Code',
-      text: `Your OTP code is ${otp}`,
+      text: `Your OTP code for verification is ${otp}`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

@@ -10,7 +10,6 @@ import Tags from "./Pages/Tags/Tags";
 import Users from "./Pages/Users/Users";
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
-import ResetPassword from "./Pages/Auth/ResetPassword";
 import RestrictedAccessPage from "./components/MobileAccessRestriction/RestrictedAccessPage"
 
 const AllRoutes = ({ slideIn, handleSlideIn }) => {
@@ -23,7 +22,6 @@ const AllRoutes = ({ slideIn, handleSlideIn }) => {
       <Route path="/restricted-access" element={<RestrictedAccessPage />} />
       <Route path="/Auth" element={<Auth />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/resetpassword" element={<ResetPassword />} />
 
 
       <Route path="/AskQuestion" element={<AskQuestion />} />

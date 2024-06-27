@@ -71,7 +71,7 @@ const Auth = () => {
           });
           const data = await response.json();
           if (data.success) {
-            if(data.browser === "Edge"){
+            if(data.browser === "Edge" || data.browser==="Safari"){
               dispatch(login({ email, password }, navigate));
             }else{
             setReceivedOtp(data.otp);

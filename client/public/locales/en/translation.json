@@ -83,17 +83,13 @@
     "somethingWentWrong": "Something went wrong",
     "enterCode": "Enter Code",
     "enterCodeMessage": "Enter the 6-digit code sent to your Email.",
-    "invalidCode": "Invalid Code"
-  },
-  "resetPassword": {
-    "email": "Email",
-    "password": "Password",
+    "invalidCode": "Invalid Code",
+    "emailOrPhone": "Email or Phone",
+    "resetPassword": "Reset Password",
+    "newPassword": " NewPassword",
     "confirmPassword": "Confirm Password",
-    "submit": "Submit",
-    "passwordMismatch": "Passwords do not match",
-    "passwordTooShort": "Password must be at least 6 characters",
     "passwordChangeSuccess": "Password changed successfully",
-    "somethingWentWrong": "Something went wrong"
+    "passwordMismatch": "Passwords do not match"
   },
   "displayAnswer": {
     "share": "Share",

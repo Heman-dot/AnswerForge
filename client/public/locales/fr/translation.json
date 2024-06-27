@@ -83,17 +83,13 @@
     "somethingWentWrong": "Quelque chose a mal tourné",
     "enterCode": "Entrer le code",
     "enterCodeMessage": "Entrez le code à 6 chiffres envoyé à votre email.",
-    "invalidCode": "Code invalide"
-  },
-  "resetPassword": {
-    "email": "Correo electrónico",
-    "password": "Contraseña",
-    "confirmPassword": "Confirmar contraseña",
-    "submit": "Enviar",
-    "passwordMismatch": "Las contraseñas no coinciden",
-    "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
-    "passwordChangeSuccess": "Contraseña cambiada con éxito",
-    "somethingWentWrong": "Algo salió mal"
+    "invalidCode": "Code invalide",
+    "emailOrPhone": "Email ou Téléphone",
+    "resetPassword": "Réinitialiser le mot de passe",
+  "newPassword": "Nouveau mot de passe",
+  "confirmPassword": "Confirmer le mot de passe",
+  "passwordChangeSuccess": "Mot de passe changé avec succès",
+  "passwordMismatch": "Les mots de passe ne correspondent pas"
   },
   "displayAnswer": {
     "share": "Partager",

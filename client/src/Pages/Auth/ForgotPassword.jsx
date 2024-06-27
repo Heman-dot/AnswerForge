@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
 import { useTranslation } from 'react-i18next';
@@ -8,20 +8,23 @@ import { useTranslation } from 'react-i18next';
 export default function ForgotPassword() {
   const { t } = useTranslation();
 
-  const [email, setEmail] = useState('');
+  const [contact, setContact] = useState('');
   const [otp, setOtp] = useState('');
   const [progress, setProgress] = useState(0);
   const navigate = useNavigate();
 
   const [showPopup, setShowPopup] = useState(false);
   const [otpValue, setOtpValue] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPasswordInput, setShowPasswordInput] = useState(false);
   const digits = '0123456789';
 
   const handleOtpChange = (event) => {
     setOtpValue(event.target.value);
   };
 
-  const sendEmail = async (e) => {
+  const sendOtp = async (e) => {
     setProgress(20);
     e.preventDefault();
 
@@ -34,7 +37,7 @@ export default function ForgotPassword() {
 
       setProgress(50);
 
-      await axios.post(`http://localhost:8080/sendEmail`, { email, OTP })
+      await axios.post('http://localhost:8080/sendEmail', { contact, OTP })
         .then(res => {
           if (res.data === 'pass') {
             toast.success(t('forgotPassword.codeSent'));
@@ -59,7 +62,30 @@ export default function ForgotPassword() {
     if (otp !== otpValue) {
       toast.error(t('forgotPassword.invalidCode'));
     } else {
-      navigate("/resetpassword");
+      setShowPopup(false);
+      setShowPasswordInput(true); 
+    }
+  };
+
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error(t('forgotPassword.passwordMismatch'));
+      return;
+    }
+    try {
+      const res = await axios.post('http://localhost:8080/resetPassword', {
+        contact,
+        password,
+      });
+      if (res.data === 'pass') {
+        toast.success(t('forgotPassword.passwordChangeSuccess'));
+        navigate('/Auth');
+      } else {
+        toast.error(t('forgotPassword.somethingWentWrong'));
+      }
+    } catch (error) {
+      toast.error(t('forgotPassword.somethingWentWrong'));
     }
   };
 
@@ -75,7 +101,8 @@ export default function ForgotPassword() {
         <div className="popup-overlay">
           <div className="popup-container">
             <h2>{t('forgotPassword.enterCode')}</h2>
-            <input style={{marginLeft:"-4%"}}
+            <input
+              style={{ marginLeft: '-4%' }}
               type="text"
               maxLength="6"
               value={otpValue}
@@ -88,31 +115,66 @@ export default function ForgotPassword() {
         </div>
       )}
 
-      <form onSubmit={sendEmail} className="forgot-password-form">
-        <section className="auth-section">
-          <div className="auth-container-2">
-            <h2 className="title">{t('forgotPassword.title')}</h2>
-            <label htmlFor="email">
-              <h4>{t('forgotPassword.email')}</h4>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit" className="auth-btn">{t('forgotPassword.submit')}</button>
-            <p>
-              <Link to="/Auth">{t('forgotPassword.login')}</Link>
-            </p>
-          </div>
-        </section>
-      </form>
+      {!showPasswordInput && (
+        <form onSubmit={sendOtp} className="forgot-password-form">
+          <section className="auth-section">
+            <div className="auth-container-2">
+              <h2 className="title">{t('forgotPassword.title')}</h2>
+              <label htmlFor="contact">
+                <h4>{t('forgotPassword.emailOrPhone')}</h4>
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  value={contact}
+                  onChange={(e) => setContact(e.target.value)}
+                  required
+                />
+              </label>
+              <button type="submit" className="auth-btn">{t('forgotPassword.submit')}</button>
+              <p>
+                <Link to="/Auth">{t('forgotPassword.login')}</Link>
+              </p>
+            </div>
+          </section>
+        </form>
+      )}
+
+      {showPasswordInput && (
+        <form onSubmit={handlePasswordSubmit} className="forgot-password-form">
+          <section className="auth-section">
+            <div className="auth-container-2">
+              <h2 className="title">{t('forgotPassword.resetPassword')}</h2>
+              <label htmlFor="password">
+                <h4>{t('forgotPassword.newPassword')}</h4>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+              <label htmlFor="confirmPassword">
+                <h4>{t('forgotPassword.confirmPassword')}</h4>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </label>
+              <button type="submit" className="auth-btn">{t('forgotPassword.submit')}</button>
+            </div>
+          </section>
+        </form>
+      )}
 
       <style>{`
-        .popup-overlay {
+         .popup-overlay {
           position: fixed;
           top: 0;
           left: 0;
@@ -202,6 +264,7 @@ export default function ForgotPassword() {
         label {
           display: block;
           margin-bottom: 1rem;
+          text-align:center;
         }
 
         label h4 {
