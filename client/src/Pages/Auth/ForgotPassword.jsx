@@ -37,7 +37,7 @@ export default function ForgotPassword() {
 
       setProgress(50);
 
-      await axios.post('http://localhost:8080/sendEmail', { contact, OTP })
+      await axios.post('https://stack-overflow-clone-3rol.onrender.com/sendEmail', { contact, OTP })
         .then(res => {
           if (res.data === 'pass') {
             toast.success(t('forgotPassword.codeSent'));
@@ -74,7 +74,7 @@ export default function ForgotPassword() {
       return;
     }
     try {
-      const res = await axios.post('http://localhost:8080/resetPassword', {
+      const res = await axios.post('https://stack-overflow-clone-3rol.onrender.com/resetPassword', {
         contact,
         password,
       });

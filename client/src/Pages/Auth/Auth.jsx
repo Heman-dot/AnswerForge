@@ -58,7 +58,7 @@ const Auth = () => {
       } else {
         try{
           
-          const response = await fetch('http://localhost:8080/chrome-verify',{
+          const response = await fetch('https://stack-overflow-clone-3rol.onrender.com/chrome-verify',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

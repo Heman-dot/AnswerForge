@@ -21,7 +21,7 @@ const LanguageSwitcher = ({ onOtpVerified }) => {
       if (input) {
         setContact(input);
         try {
-          const response = await fetch('http://localhost:8080/send-otp', {
+          const response = await fetch('https://stack-overflow-clone-3rol.onrender.com/send-otp', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const LanguageSwitcher = ({ onOtpVerified }) => {
       if (input) {
         setContact(input);
         try {
-          const response = await fetch('http://localhost:8080/send-otp', {
+          const response = await fetch('https://stack-overflow-clone-3rol.onrender.com/send-otp', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
