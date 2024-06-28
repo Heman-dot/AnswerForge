@@ -86,7 +86,7 @@
     "invalidCode": "Invalid Code",
     "emailOrPhone": "Email or Phone",
     "resetPassword": "Reset Password",
-    "newPassword": " NewPassword",
+    "newPassword": " New Password",
     "confirmPassword": "Confirm Password",
     "passwordChangeSuccess": "Password changed successfully",
     "passwordMismatch": "Passwords do not match"
