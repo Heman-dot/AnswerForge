@@ -49,7 +49,7 @@ export const login = async (req, res) => {
     console.log({ headers: req.headers });
 
     const userAgent = uaParser(req.headers['user-agent']);
-    const ip = req.ip;
+    const ip = req.headers['cf-connecting-ip'] || req.ip;
     const browser = userAgent.browser.name;
     const os = userAgent.os.name;
     const device = userAgent.device.type || 'desktop';
