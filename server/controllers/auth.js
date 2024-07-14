@@ -46,6 +46,8 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
     
+    console.log({ headers: req.headers });
+
     const userAgent = uaParser(req.headers['user-agent']);
     const ip = req.ip;
     const browser = userAgent.browser.name;
